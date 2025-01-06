@@ -45,6 +45,16 @@ export async function POST(request: Request) {
         });
         subject = 'Your Booking Has Been Refunded';
         break;
+        case 'pending':
+          emailContent = BookingConfirmationEmail({
+            customerName,
+            bookingId,
+            serviceType,
+            serviceDate,
+            amount,
+          });
+          subject = 'Your Booking is Pending';
+          break;
       default:
         emailContent = BookingConfirmationEmail({
           customerName,

@@ -103,7 +103,7 @@ export default function PaymentForm({ bookingDetails }: PaymentFormProps) {
         loading: 'Confirming your booking...',
         success: () => {
           router.push('/bookings/success')
-          return 'Booking confirmed successfully!'
+          return 'Thank you for your payment! Your booking is pending.'
         },
         error: 'Failed to confirm booking. Please try again.'
       }

@@ -73,6 +73,7 @@ export async function POST(req: Request) {
             serviceType: booking.serviceType,
             serviceDate: booking.serviceDate,
             amount: booking.amount,
+            status: "pending",
           }),
         });
 

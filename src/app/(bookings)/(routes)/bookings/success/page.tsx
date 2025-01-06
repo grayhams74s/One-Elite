@@ -50,7 +50,7 @@ export default function PaymentSuccessPage() {
         className="text-gray-600 text-center mb-8 max-w-md"
         variants={itemVariants}
       >
-        Thank you for your payment. Please wait for approval from the admin.
+        Thank you for your payment. Please wait for approval from the staff.
       </motion.p>
       
       <motion.div 

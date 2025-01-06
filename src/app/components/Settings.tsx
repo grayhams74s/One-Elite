@@ -3,9 +3,12 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+
+import { useSession } from "next-auth/react"
 
 export default function SettingsPage() {
+  const { data: session } = useSession()
+
   return (
     <div className="max-w-6xl mx-auto px-20 py-8">
       <div className="grid gap-8 md:grid-cols-[1fr,280px]">
@@ -20,7 +23,11 @@ export default function SettingsPage() {
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="shadcn" className="border-0  bg-gray-50" />
+              <Input 
+                id="username" 
+                defaultValue={session?.user?.name || ""} 
+                className="border-0 bg-gray-50" 
+              />
               <p className="text-sm text-gray-400">
                 This is your public display name. It can be your real name or a pseudonym. You can only
                 change this once every 30 days.
@@ -29,7 +36,11 @@ export default function SettingsPage() {
 
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" defaultValue="felix@gmail.com" className="border-0 shadow-none bg-gray-50" />
+              <Input 
+                id="email" 
+                defaultValue={session?.user?.email || ""} 
+                className="border-0 shadow-none bg-gray-50" 
+              />
               <p className="text-sm text-gray-400">
                 You can manage verified email addresses in your email settings.
               </p>
@@ -37,7 +48,7 @@ export default function SettingsPage() {
 
             <div className="space-y-2">
               <Label htmlFor="bio">Bio</Label>
-              <Textarea id="bio" defaultValue="I own a computer." className="border-0 shadow-none bg-gray-50" />
+
               <p className="text-sm text-gray-400">
                 You can @mention other users and organizations to link to them.
               </p>

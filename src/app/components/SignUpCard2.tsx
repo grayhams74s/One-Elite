@@ -95,9 +95,36 @@ export default function SignUpCard2() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="name">First Name</Label>
                   <Input
                     id="name"
+                    type="text"
+                    placeholder="John Doe"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className='border-white/30'
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="lastname">Last Name</Label>
+                  <Input
+                    id="lastname"
+                    type="text"
+                    placeholder="John Doe"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className='border-white/30'
+                  />
+                </div>
+
+                
+                <div className="space-y-2">
+                  <Label htmlFor="middlename">Middle Name</Label>
+                  <Input
+                    id="middlename"
                     type="text"
                     placeholder="John Doe"
                     value={name}
@@ -169,19 +196,6 @@ export default function SignUpCard2() {
                     placeholder="Tondo"
                     value={state}
                     onChange={(e) => setState(e.target.value)}
-                    required
-                    className='border-white/30'
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="zipCode">Zip Code</Label>
-                  <Input
-                    id="zipCode"
-                    type="text"
-                    placeholder="10001"
-                    value={zipCode}
-                    onChange={(e) => setZipCode(e.target.value)}
                     required
                     className='border-white/30'
                   />
